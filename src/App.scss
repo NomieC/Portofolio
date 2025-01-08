@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Rubik+Iso&display=swap');
+
+.container{
+    height: 200vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns:repeat(10, 10vw) ;
+    grid-template-rows: repeat(10, 10vh);
+
+}
+
+.text{
+    grid-area: 4/2/6/7 ;
+    font-weight: 500;
+}
+
+//hi its me fidel
+.text h1{
+    font-family: "League Spartan", serif;
+    font-size: 6em;
+    cursor: pointer;
+}
+
+
+
+.text h1 span{
+    transition: 0.8s;
+    margin-right: -5px;
+}
+
+.text:hover h1 span:nth-child(1){
+    margin-right: 5px;
+}
+.text:hover h1 span:nth-child(2){
+    margin-right: 5px;
+}
+.text h1:hover span:nth-child(3){
+    margin-right: 5px;
+}
+.text h1:hover span:nth-child(4){
+    margin-right: 5px;
+}
+
+
+
+.text h1 span{
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 
+    0 0 20px #fff, ;
+}
+.text h1 span:hover{
+    color: #fff;
+    text-shadow: 0 0 10px #9c9c9c,
+    0 0 20px #999999, 
+    0 0 30px #fff, 
+    0 0 40px #35258c, 
+    0 0 60px #00d0ff, ;
+}
+
+// Button hover affects .text
+.container:has(.button:hover) .text h1 span {
+    margin-right: 10px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #9c9c9c,
+                 0 0 20px #999999,
+                 0 0 30px #fff,
+                 0 0 40px #35258c,
+                 0 0 60px #00d0ff;
+  }
+
+//Always your number one till infinity and beyond
+.text h3{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2em;
+    color: black;
+    margin-top: -4rem;
+}
+
+
+
+//button
+.button{
+    grid-area: 6/2/6/4 ;
+    margin-top: 1rem;
+    width: 250px;
+    height: 70px;
+}
+
+.navbar{
+    grid-area: 1/4/1/8;
+    position: sticky;
+}
+
+//aaaaaa
+.drinks-canvas{
+    grid-area: 2/6/10/11;
+    z-index: 1;
+}
+
