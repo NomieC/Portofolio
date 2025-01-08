@@ -3,6 +3,7 @@ import "./App.scss";
 import Nav from "./Section/Nav";
 import Drinks from "./Section/Drinks";
 import "./Styles/Downloadcv.scss";
+import CV from "../public/assets/FidelBrianDava_CV.pdf";
 
 
 const App = () => {
@@ -14,8 +15,9 @@ const App = () => {
         <h3>Always your number one, till infinity and beyond . . .</h3>
       </div>
       <div className="button">
+        <a href={CV} download="FidelBrianDava_CV.pdf">
         <button className="btn">
-          <strong className="strong">Download CV</strong>
+          <strong className="strong"><a href={CV} download="FidelBrianDava_CV.pdf">Download CV</a></strong>
           <div className="containerstars">
             <div className="stars"></div>
           </div>
@@ -24,6 +26,7 @@ const App = () => {
             <div className="circle"></div>
           </div>
         </button>
+        </a>
       </div>
       <Drinks className='drinks'/>
     </div>

@@ -25,14 +25,28 @@
     backdrop-filter: blur(1rem);
     border-radius: 5rem;
   }
+
+  .button a{
+    text-decoration: none;
+  }
   
-  .strong {
-    z-index: 2;
+  .strong a {
+    z-index: 3;
     font-family: 'Avalors Personal Use';
     font-size: 1.5rem;
     letter-spacing: 5px;
     color: #FFFFFF;
     text-shadow: 0 0 4px white;
+    text-decoration: none;
+  }
+  .strong{
+    z-index: 3;
+    font-family: 'Avalors Personal Use';
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 4px white;
+    text-decoration: none;
   }
   
   .glow {
