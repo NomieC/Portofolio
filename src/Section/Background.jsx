@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/Background.scss";
+import "../Styles/Background.scss";
 
 export const Background = () => {
   useEffect(() => {
