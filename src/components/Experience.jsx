@@ -15,7 +15,7 @@ const Experience = () => {
         initial="hidden" 
         whileInView="visible" 
         viewport={{ once: true, amount: 1 }}
-        className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-cyan-300 py-20"
+        className="text-[40px] font-semibold text-gray-500 py-20"
       >
         My Project
       </motion.h1>
