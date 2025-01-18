@@ -14,7 +14,7 @@ const Experience = () => {
         variants={slideInFromTop}
         initial="hidden" 
         whileInView="visible" 
-        viewport={{ once: true, amount: 1 }}
+        viewport={{ once: false, amount: 0.1 }}
         className="text-[40px] font-semibold text-gray-500 py-20"
       >
         My Project
