@@ -1,35 +1,35 @@
-import { Canvas } from "@react-three/fiber";
-import "./App.scss";
-import Nav from "./Section/Nav";
-import Drinks from "./Section/Drinks";
-import "./Styles/Downloadcv.scss";
-import CV from "../public/assets/FidelBrianDava_CV.pdf";
-
+import { BrowserRouter } from "react-router-dom";
+import {
+  About,
+  Contact,
+  Experience,
+  Feedbacks,
+  Hero,
+  Navbar,
+  Tech,
+  Works,
+  StarsCanvas,
+} from "./components";
 
 const App = () => {
   return (
-    <div className="container">
-      <Nav />
-      <div className="text">
-        <h1><span>Hi</span><span>, </span><span> it's</span><span> me</span><span> Fidel</span></h1>
-        <h3>Always your number one, till infinity and beyond . . .</h3>
+    <BrowserRouter>
+      <div className="h-full w-full bg-[#030014]">
+        <div className="flex flex-col h-full w-screen">
+          {/* <Navbar /> */}
+          <StarsCanvas />
+          <Hero />
+          <Experience />
+        </div>
+        {/* 
+      <Tech />
+      <Works />
+      <Feedbacks />
+      <div className='relative z-0'>
+        <Contact />
+      </div> */}
       </div>
-      <div className="button">
-        <a href={CV} download="FidelBrianDava_CV.pdf">
-        <button className="btn">
-          <strong className="strong"><a href={CV} download="FidelBrianDava_CV.pdf">Download CV</a></strong>
-          <div className="containerstars">
-            <div className="stars"></div>
-          </div>
-          <div className="glow">
-            <div className="circle"></div>
-            <div className="circle"></div>
-          </div>
-        </button>
-        </a>
-      </div>
-      <Drinks className='drinks'/>
-    </div>
+    </BrowserRouter>
   );
 };
 
