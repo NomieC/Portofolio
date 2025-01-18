@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "../../utils/motion";
-import Planet from "./planet.jsx";
+import Planet from "./Planet.jsx";
 import "../../styles/downloadcv.css";
 const CV = "/FidelBrianDava_CV.pdf";
 
