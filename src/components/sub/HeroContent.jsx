@@ -13,11 +13,11 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="h-full w-full flex flex-col justify-center px-5 md:px-20 mt-20 md:mt-40 z-[20]"
+      className="h-full w-full flex flex-col justify-center px-5 md:px-20 mt-20 md:mt-40 "
     >
       <div className="h-full w-full flex flex-col md:flex-row justify-between items-center mt-20 md:mt-0">
         {/* Left: Text Content */}
-        <div className="flex flex-col gap-5 text-start max-w-full md:max-w-[50%]">
+        <div className="flex flex-col gap-5 text-center md:text-start max-w-full md:max-w-[50%] z-10">
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-6 mt-6 text-4xl md:text-6xl font-bold"
@@ -41,7 +41,7 @@ const HeroContent = () => {
             passionate about creating high-quality software and I enjoy learning
             new technologies.
           </motion.p>
-          <motion.div variants={slideInFromLeft(0.9)} className="button mx-auto md:mx-0">
+          <motion.div variants={slideInFromLeft(0.9)} className="button mx-auto md:mx-0 ">
             <a href={CV} download="FidelBrianDava_CV.pdf">
               <button className="btn">
                 <strong className="strong">Download CV</strong>
