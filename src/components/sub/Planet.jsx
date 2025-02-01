@@ -39,11 +39,11 @@ const Planet = ({ scaleFactor = 1 }) => {
 
 const PlanetCanvas = () => {
   // Use react-responsive to detect if the screen width is less than 768px
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
   
   // Set the scale factor depending on screen size.
   // For example, on mobile use 0.5 (or any value that suits your design), otherwise 1.
-  const scaleFactor = isMobile ? 0.5 : 1;
+  const scaleFactor = isMobile ? 1.2 : 1;
 
   return (
     <Canvas

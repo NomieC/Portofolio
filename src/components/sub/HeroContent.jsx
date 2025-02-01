@@ -60,7 +60,7 @@ const HeroContent = () => {
         {/* Right: Planet */}
         <motion.div
           variants={slideInFromRight(1)}
-          className="w-full md:w-[90%] h-auto md:h-[90%] -mt-[200px] md:mt-0 "
+          className="w-full md:w-[90%] h-full md:h-[90%]  md:mt-0 z-[2]"
         >
           <Planet />
         </motion.div>
