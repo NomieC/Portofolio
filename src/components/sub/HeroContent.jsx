@@ -36,12 +36,16 @@ const HeroContent = () => {
             variants={slideInFromLeft(0.8)}
             className="text-base md:text-lg text-gray-400 my-3"
           >
-            I am a Full Stack Developer with experience in developing web
-            applications using JavaScript, React, Node.js, and MySQL. I am
-            passionate about creating high-quality software and I enjoy learning
-            new technologies.
+            Computer Science student with hands-on experience developing
+            scalable web applications using Laravel, React, and PostgreSQL.
+            Delivered responsive websites for organizations and internal tools
+            that improved workflow efficiency by up to 40%. Strong interest in
+            cybersecurity and financial technology.
           </motion.p>
-          <motion.div variants={slideInFromLeft(0.9)} className="button mx-auto md:mx-0 ">
+          <motion.div
+            variants={slideInFromLeft(0.9)}
+            className="button mx-auto md:mx-0 "
+          >
             <a href={CV} download="FidelBrianDava_CV.pdf">
               <button className="btn">
                 <strong className="strong">Download CV</strong>

@@ -14,27 +14,37 @@ const Experience = () => {
         variants={slideInFromTop}
         initial="hidden" 
         whileInView="visible" 
-        viewport={{ once: true, amount: 0.01 }}
+        viewport={{ once: true, amount: 0.1 }}
         className="text-[40px] font-semibold text-gray-500 py-20"
       >
         My Project
       </motion.h1>
       <div className="flex flex-wrap justify-center gap-10 px-10">
         <ProjectCard
-          src="/genshinfo.jpeg"
-          title="Genshinfo"
-          description="Wiki website for genshin impact community"
+        link="https://tv.umn.ac.id"
+          src="/UMNTV.webm"
+          title="UMNTV"
+          description="Website for UMN TV, a student organization in my university (Still in development)"
         />
         <ProjectCard
+        link="#"
+          src="/Dishub.png"
+          title="UMNTV"
+          description="Website for Dishub Tangerang Selatan, a local government organization while I was an intern there"
+        />
+        <ProjectCard
+          link="https://maisonresto.com"
           src="/maison.jpeg"
           title="Maison de l'Anglais"
           description="FnB website for midterms project, made with PHP laravel"
         />
         <ProjectCard
+          link="https://genshinfo.vercel.app/"
           src="/genshinfo.jpeg"
           title="Genshinfo"
           description="Wiki website for genshin impact community"
         />
+        
       </div>
     </div>
   );
