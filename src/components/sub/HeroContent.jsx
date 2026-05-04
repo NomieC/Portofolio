@@ -20,17 +20,171 @@ const HeroContent = () => {
         <div className="flex flex-col gap-5 text-center md:text-start max-w-full md:max-w-[50%] z-10">
           <motion.div
             variants={slideInFromLeft(0.5)}
-            className="flex flex-col gap-6 mt-6 text-4xl md:text-6xl font-bold"
+            className="flex flex-row flex-wrap gap-x-4 mt-6 text-5xl md:text-8xl font-black font-display"
           >
-            <span className="textnama text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              <span>Fidel</span> <span>Brian</span> <span>Dava</span>
-            </span>
+            <div className="flex">
+              {"Fidel".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: i * 0.15,
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "2px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex">
+              {"Brian".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: (i + 5) * 1,
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "2px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex">
+              {"Dava".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: (i + 10) * 2.15,
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "2px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
           </motion.div>
           <motion.div
             variants={slideInFromLeft(0.6)}
-            className="flex flex-col gap-6 text-3xl md:text-5xl font-bold text-white"
+            className="flex flex-row flex-wrap gap-x-3 text-2xl md:text-5xl font-bold font-display"
           >
-            Junior Full Stack Developer
+            <div className="flex">
+              {"Fullstack".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: i * 0.1,
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "1.5px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex">
+              {"Developer".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: (i + 9) * 0.1,
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "1.5px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
+            
+            <div className="flex mx-2">
+              <motion.span
+                animate={{
+                  WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                  filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: 12, // Longer delay for the slash
+                }}
+                className="text-black"
+                style={{ WebkitTextStrokeWidth: "1.5px" }}
+              >
+                /
+              </motion.span>
+            </div>
+
+            <div className="flex">
+              {"AI".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay:  18.1, // Delay after slash
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "1.5px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+              <span className="w-3"></span>
+              {"Engineer".split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  animate={{
+                    WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
+                    filter: ["drop-shadow(0 0 0px rgba(255,255,255,0))", "drop-shadow(0 0 10px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0))"]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: (i + 20) * 2,
+                  }}
+                  className="text-black"
+                  style={{ WebkitTextStrokeWidth: "1.5px" }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
           </motion.div>
           <motion.p
             variants={slideInFromLeft(0.8)}

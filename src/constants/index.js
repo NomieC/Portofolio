@@ -262,4 +262,56 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  const journey = [
+    {
+      title: "UMN Bachelor Degree",
+      company_name: "Universitas Multimedia Nusantara",
+      icon: "school",
+      iconBg: "#383E56",
+      date: "2022 — PRESENT",
+      points: [
+        "Pursuing a Bachelor's degree in Information Systems/Informatics.",
+        "Focusing on web development, database management, and software engineering.",
+      ],
+      color: "#007bff",
+    },
+    {
+      title: "Fullstack Internship",
+      company_name: "Government Institution",
+      icon: "account_balance",
+      iconBg: "#E6DEDD",
+      date: "Feb — June 2025",
+      points: [
+        "Developing internal web applications for government services.",
+        "Working with modern tech stacks to optimize administrative workflows.",
+      ],
+      color: "#f39c12",
+    },
+    {
+      title: "Fullstack Internship",
+      company_name: "JLM",
+      icon: "business_center",
+      iconBg: "#383E56",
+      date: "Aug — Dec 2025",
+      points: [
+        "Building and maintaining full-stack solutions for company projects.",
+        "Collaborating with a professional development team to deliver high-quality software.",
+      ],
+      color: "#9b59b6",
+    },
+  ];
+
+  const universeTech = [
+    { name: "React", icon: reactjs, orbit: 1, angle: 0 },
+    { name: "Tailwind", icon: tailwind, orbit: 1, angle: 120 },
+    { name: "Three.js", icon: threejs, orbit: 1, angle: 240 },
+    { name: "Node.js", icon: nodejs, orbit: 2, angle: 45 },
+    { name: "MongoDB", icon: mongodb, orbit: 2, angle: 135 },
+    { name: "Laravel", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg", orbit: 2, angle: 225 },
+    { name: "PostgreSQL", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg", orbit: 2, angle: 315 },
+    { name: "TypeScript", icon: typescript, orbit: 3, angle: 90 },
+    { name: "Docker", icon: docker, orbit: 3, angle: 210 },
+    { name: "Git", icon: git, orbit: 3, angle: 330 },
+  ];
+  
+  export { services, technologies, experiences, testimonials, projects, journey, universeTech };

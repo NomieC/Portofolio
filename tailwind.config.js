@@ -50,12 +50,16 @@ module.exports = {
                     },
                 },
             },
-            animation: {
-                flicker: 'flicker 2.5s infinite',
-                'glow-pulse': 'glow 2s ease-in-out infinite',
-                'gradient-wave': 'gradient-wave 5s ease-in-out infinite',
-                'rainbow-glow': 'rainbow-glow 2.5s ease-in-out infinite',
-            },
+      animation: {
+        flicker: 'flicker 2.5s infinite',
+        'glow-pulse': 'glow 2s ease-in-out infinite',
+        'gradient-wave': 'gradient-wave 5s ease-in-out infinite',
+        'rainbow-glow': 'rainbow-glow 2.5s ease-in-out infinite',
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        display: ["Space Grotesk", "sans-serif"],
+      },
     },
   },
   plugins: [],

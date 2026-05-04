@@ -48,10 +48,15 @@ const PlanetCanvas = () => {
   return (
     <Canvas
       className="planet-canvas"
-      frameLoop="demand"
+      frameLoop="always" // Changed to always for continuous rotation, but optimized with dpr
+      dpr={[1, 2]} // Performance optimization: limit pixel ratio
       shadows
-      camera={{ position: [10, 0, 10], fov: 10, near: 0.01, far: 5000 }}
-      gl={{ preserveDrawingBuffer: true }}
+      camera={{ position: [10, 0, 10], fov: 10, near: 0.1, far: 1000 }}
+      gl={{ 
+        preserveDrawingBuffer: true,
+        powerPreference: "high-performance", // Hint for GPU selection
+        antialias: true 
+      }}
     >
       <Suspense fallback={null}>
         <OrbitControls
