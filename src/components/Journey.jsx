@@ -5,21 +5,22 @@ import { styles } from "../styles";
 
 const PulsingRing = ({ color, delay = 0, size = "w-20 h-20" }) => (
   <motion.div
-    initial={{ scale: 0.8, opacity: 0.5 }}
+    initial={{ scale: 0.9, opacity: 0 }}
     animate={{
-      scale: [1, 1.8, 2.5],
-      opacity: [0.8, 0.4, 0],
+      scale: [1, 1.5, 2.0],
+      opacity: [0.6, 0.3, 0],
     }}
     transition={{
-      duration: 3,
+      duration: 5,
       repeat: Infinity,
-      delay: delay,
+      delay: delay * 1.5,
+      repeatDelay: 1.5,
       ease: "easeOut",
     }}
-    className={`absolute rounded-full border-2 ${size} pointer-events-none`}
+    className={`absolute rounded-full border ${size} pointer-events-none`}
     style={{ 
       borderColor: color,
-      boxShadow: `0 0 15px ${color}, inset 0 0 10px ${color}`,
+      boxShadow: `0 0 10px ${color}, inset 0 0 5px ${color}`,
       filter: "blur(1px)"
     }}
   />
