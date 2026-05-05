@@ -1,21 +1,19 @@
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Preload } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 
-// Planet component accepts a scaleFactor prop
-const Planet = ({ scaleFactor = 1 }) => {
+// Planet 3D model component
+const PlanetModel = ({ scaleFactor = 1, position = [0, 0, 0] }) => {
   const planet = useGLTF("/lava_planet/scene.gltf");
   const ref = useRef();
 
-  // Auto-rotate the model on each frame
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.01; // Rotate around Y-axis
+      ref.current.rotation.y += 0.01;
     }
   });
 
-  // Disable frustum culling for all meshes in the scene
   planet.scene.traverse((child) => {
     if (child.isMesh) {
       child.frustumCulled = false;
@@ -24,51 +22,50 @@ const Planet = ({ scaleFactor = 1 }) => {
 
   return (
     <>
-      {/* Independent lights */}
       <hemisphereLight intensity={1} groundColor="black" />
       <pointLight intensity={2100} position={[-10, 0, -8]} distance={500} />
-
-      {/* Rotating planet */}
       <mesh ref={ref}>
-        {/* Use the passed scaleFactor */}
-        <primitive object={planet.scene} scale={scaleFactor} position={[0, 0, 0]} />
+        <primitive object={planet.scene} scale={scaleFactor} position={position} />
       </mesh>
     </>
   );
 };
 
 const PlanetCanvas = () => {
-  // Use react-responsive to detect if the screen width is less than 768px
-  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(min-width: 769px) and (max-width: 1024px)" });
   
-  // Set the scale factor depending on screen size.
-  // For example, on mobile use 0.5 (or any value that suits your design), otherwise 1.
-  const scaleFactor = isMobile ? 1.2 : 1;
+  // Mobile: planet centered, shifted down to cover bottom 1/3
+  // Tablet: planet to the right, slightly lower
+  // Desktop: planet to the right side, like the original layout
+  const scaleFactor = isMobile ? 1.5 : isTablet ? 1.0 : 0.9;
+  const position = isMobile ? [0, -1.5, 0] : isTablet ? [2.5, -0.3, 0] : [3, -0.3, 0];
+  const fov = isMobile ? 14 : isTablet ? 12 : 10;
 
   return (
-    <Canvas
-      className="planet-canvas"
-      frameLoop="always" // Changed to always for continuous rotation, but optimized with dpr
-      dpr={[1, 2]} // Performance optimization: limit pixel ratio
-      shadows
-      camera={{ position: [10, 0, 10], fov: 10, near: 0.1, far: 1000 }}
-      gl={{ 
-        preserveDrawingBuffer: true,
-        powerPreference: "high-performance", // Hint for GPU selection
-        antialias: true 
-      }}
-    >
-      <Suspense fallback={null}>
-        <OrbitControls
-          enableZoom={false}
-          enableRotate={false}
-          maxPolarAngle={Math.PI / 2.5}
-          minPolarAngle={Math.PI / 2.5}
-        />
-        <Planet scaleFactor={scaleFactor} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
+    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+      <Canvas
+        frameLoop="always"
+        dpr={[1, 2]}
+        shadows={false}
+        camera={{ position: [10, 0, 10], fov, near: 0.1, far: 2000 }}
+        gl={{ 
+          preserveDrawingBuffer: true,
+          powerPreference: "high-performance",
+          antialias: true,
+          alpha: true
+        }}
+        style={{ background: 'transparent' }}
+      >
+        <Suspense fallback={null}>
+          <OrbitControls
+            enableZoom={false}
+            enableRotate={false}
+          />
+          <PlanetModel scaleFactor={scaleFactor} position={position} />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 

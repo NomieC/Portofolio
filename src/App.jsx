@@ -38,7 +38,7 @@ const App = () => {
 
         <div className="flex flex-col h-full w-screen relative">
           {/* Spotlight Effect */}
-          <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-white opacity-5 blur-[120px] rounded-full pointer-events-none z-[5]" />
+          <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-white opacity-5 blur-[120px] rounded-full pointer-events-none z-[30]" />
           
           <Hero />
           

@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight } from "../../utils/motion";
-import Planet from "./Planet.jsx";
 import "../../styles/downloadcv.css";
 
 const CV = "/FidelBrianDava_CV.pdf";
@@ -13,14 +12,14 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="h-full w-full flex flex-col justify-center px-5 md:px-20 mt-20 md:mt-40 "
+      className="min-h-[100dvh] w-full flex flex-col justify-center px-5 md:px-20"
     >
-      <div className="h-full w-full flex flex-col md:flex-row justify-between items-center mt-20 md:mt-0">
-        {/* Left: Text Content */}
-        <div className="flex flex-col gap-5 text-center md:text-start max-w-full md:max-w-[50%] z-10">
+      <div className="flex flex-col justify-center mt-20 md:mt-32 lg:mt-40">
+        {/* Text Content */}
+        <div className="flex flex-col gap-5 text-center lg:text-start max-w-full lg:max-w-[55%]">
           <motion.div
             variants={slideInFromLeft(0.5)}
-            className="flex flex-row flex-wrap gap-x-4 mt-6 text-5xl md:text-8xl font-black font-display"
+            className="flex flex-row flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4 text-4xl md:text-6xl lg:text-8xl font-black font-display"
           >
             <div className="flex">
               {"Fidel".split("").map((letter, i) => (
@@ -85,7 +84,7 @@ const HeroContent = () => {
           </motion.div>
           <motion.div
             variants={slideInFromLeft(0.6)}
-            className="flex flex-row flex-wrap gap-x-3 text-2xl md:text-5xl font-bold font-display"
+            className="flex flex-row flex-wrap justify-center lg:justify-start gap-x-2 md:gap-x-3 text-xl md:text-3xl lg:text-5xl font-bold font-display"
           >
             <div className="flex">
               {"Fullstack".split("").map((letter, i) => (
@@ -128,7 +127,7 @@ const HeroContent = () => {
               ))}
             </div>
             
-            <div className="flex mx-2">
+            <div className="flex mx-1 md:mx-2">
               <motion.span
                 animate={{
                   WebkitTextStrokeColor: ["rgba(255,255,255,0)", "rgba(255,255,255,1)", "rgba(255,255,255,0)"],
@@ -137,7 +136,7 @@ const HeroContent = () => {
                 transition={{
                   duration: 2.5,
                   repeat: Infinity,
-                  delay: 12, // Longer delay for the slash
+                  delay: 12, 
                 }}
                 className="text-black"
                 style={{ WebkitTextStrokeWidth: "1.5px" }}
@@ -157,7 +156,7 @@ const HeroContent = () => {
                   transition={{
                     duration: 2.5,
                     repeat: Infinity,
-                    delay:  18.1, // Delay after slash
+                    delay:  18.1, 
                   }}
                   className="text-black"
                   style={{ WebkitTextStrokeWidth: "1.5px" }}
@@ -165,7 +164,7 @@ const HeroContent = () => {
                   {letter}
                 </motion.span>
               ))}
-              <span className="w-3"></span>
+              <span className="w-2 md:w-3"></span>
               {"Engineer".split("").map((letter, i) => (
                 <motion.span
                   key={i}
@@ -188,7 +187,7 @@ const HeroContent = () => {
           </motion.div>
           <motion.p
             variants={slideInFromLeft(0.8)}
-            className="text-base md:text-lg text-gray-400 my-3"
+            className="text-sm md:text-base lg:text-lg text-gray-400 my-3 px-2 md:px-0"
           >
             Computer Science student with hands-on experience developing
             scalable web applications using Laravel, React, and PostgreSQL.
@@ -198,10 +197,10 @@ const HeroContent = () => {
           </motion.p>
           <motion.div
             variants={slideInFromLeft(0.9)}
-            className="button mx-auto md:mx-0 "
+            className="button mx-auto lg:mx-0"
           >
             <a href={CV} download="FidelBrianDava_CV.pdf">
-              <button className="btn">
+              <button className="btn scale-90 md:scale-100">
                 <strong className="strong">Download CV</strong>
                 <div className="containerstars">
                   <div className="stars"></div>
@@ -214,14 +213,6 @@ const HeroContent = () => {
             </a>
           </motion.div>
         </div>
-
-        {/* Right: Planet */}
-        <motion.div
-          variants={slideInFromRight(1)}
-          className="w-full md:w-[90%] h-full md:h-[90%]  md:mt-0 z-[2]"
-        >
-          <Planet />
-        </motion.div>
       </div>
     </motion.div>
   );
